@@ -8,20 +8,20 @@ function distanceFromHqInBlocks(Hq) {
     }
 }
 
-function distanceFromHqInFeet(feet){
- return distanceFromHqInBlocks(feet)*264
+function distanceFromHqInFeet(blocks){
+ return distanceFromHqInBlocks(blocks)*264
 }
-function distanceTravelledInFeet (start, destination) {
- if(start < destination){
-    return (destination - start)*264
+function distanceTravelledInFeet (pickUp, destination) {
+ if(pickUp < destination){
+    return (destination - pickUp)*264
  }
  else{
-    return (start - destination)*264
+    return (pickUp - destination)*264
  }
 }
  
-function calculatesFarePrice(start, destination){
-    let feet=distanceTravelledInFeet(start, destination)
+function calculatesFarePrice(pickUp, destination){
+    let feet=distanceTravelledInFeet(pickUp, destination)
     if (feet<400) {
         return 0
     }
